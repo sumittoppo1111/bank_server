@@ -16,7 +16,7 @@ app.use('/',Routes);
 dotenv.config();
 
 const corsOptions={
-    origin:"https://bank-client-qm9s5kspc-sumittoppo1111.vercel.app",
+    origin:"https://bankclient.onrender.com",
 }
 
 app.use(cors(corsOptions));
