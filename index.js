@@ -16,8 +16,9 @@ app.use('/',Routes);
 dotenv.config();
 
 const corsOptions={
-    origin: "https://bankclient.onrender.com",
+    origin:"https://bankclient.onrender.com",
 }
+
 app.use(cors(corsOptions));
 const PORT =process.env.PORT || 8000;
 const username=process.env.DB_USERNAME;
