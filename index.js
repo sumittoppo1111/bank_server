@@ -15,8 +15,16 @@ app.use('/',Routes);
 
 dotenv.config();
 
+const whitelist=["https://bankclient.onrender.com","http://bank-client-qm9s5kspc-sumittoppo1111.vercel.app","https://bank-client-five.vercel.app"]
+
 const corsOptions={
-    origin:"https://bankclient.onrender.com",
+    origin:function (origin,callback){
+        if (whitelist.indexOf(origin)!==-1) {
+            callback(null,true)
+    }else{
+        callback(new Error('Not allowed by CORS'));
+    }
+    }
 }
 
 app.use(cors(corsOptions));
