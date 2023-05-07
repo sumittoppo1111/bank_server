@@ -10,11 +10,15 @@ import bodyParser from 'body-parser';
 const app=express();
 app.use(bodyParser.json({extended:true}));
 app.use(bodyParser.urlencoded({extented:true}));
-app.use(cors());
+
 app.use('/',Routes);
 
 dotenv.config();
 
+const corsOptions={
+    origin: "https://bankclient.onrender.com",
+}
+app.use(cors(corsOptions));
 const PORT =process.env.PORT || 8000;
 const username=process.env.DB_USERNAME;
 const password=process.env.DB_PASSWORD;
