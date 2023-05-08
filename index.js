@@ -13,16 +13,17 @@ app.use(bodyParser.urlencoded({extented:true}));
 
 // app.use(cors());
 
-const corsOptions={
-    
-    origin:"https://bankclient.onrender.com",
-    
-}
+
 
 
 
 app.use('/',Routes);
 
+const corsOptions={
+    
+    origin:"https://bankclient.onrender.com",
+    
+}
 dotenv.config();
 
 
